@@ -1,0 +1,10 @@
+-- 코드를 입력하세요
+-- 조건 : 생일이 3월인 여성
+-- 조건 : 전화번호가 null인경우 출력 제외
+-- 조건 : ID를 기준으로 오름차순
+-- ID 이름 성별 생년월일
+SELECT MEMBER_ID,MEMBER_NAME,GENDER,
+DATE_FORMAT(DATE_OF_BIRTH, '%Y-%m-%d') AS DATE_OF_BIRTH
+FROM MEMBER_PROFILE
+WHERE GENDER = 'W' AND TLNO IS NOT NULL AND MONTH(DATE_OF_BIRTH) = 3
+ORDER BY MEMBER_ID ASC
